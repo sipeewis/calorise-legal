@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Yang Diao — One coffee, made one way</title>
+  <meta name="description" content="Yang Diao is a counter in Talat Noi, Bangkok, that makes one coffee: a washed single origin from Doi Pangkhon, pulled the same way every time.">
+  <meta name="theme-color" content="#f4efe6">
+  <link rel="preload" href="assets/fonts/newsreader-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/jost-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to the page</a>
+
+  <header class="nav" id="nav">
+    <div class="nav__in">
+      <a class="mark" href="#top" aria-label="Yang Diao, back to the top">Yang Diao</a>
+      <nav aria-label="Sections">
+        <ul class="nav__links">
+          <li><a href="#bean">The bean</a></li>
+          <li><a href="#recipe">The recipe</a></li>
+          <li><a href="#counter">The counter</a></li>
+          <li><a href="#visit">Visit</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--nav" href="#bag">Hold a bag<span class="long">&nbsp;· 480 baht</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <p class="meta">Single origin · Doi Pangkhon · One cup on the menu</p>
+
+      <figure class="pour" aria-describedby="pour-read">
+        <svg class="pour__svg" viewBox="0 0 600 600" role="img" aria-label="A drawn espresso cup seen from above, filling as a shot is pulled.">
+          <defs>
+            <radialGradient id="sau" cx="0.45" cy="0.4" r="0.6">
+              <stop offset="0" stop-color="#fbf7ef"/><stop offset="0.7" stop-color="#ece3d3"/><stop offset="1" stop-color="#d9ccb5"/>
+            </radialGradient>
+            <radialGradient id="rim" cx="0.42" cy="0.38" r="0.62">
+              <stop offset="0" stop-color="#fffdf8"/><stop offset="0.8" stop-color="#efe7d8"/><stop offset="1" stop-color="#d6c8ae"/>
+            </radialGradient>
+            <radialGradient id="well" cx="0.5" cy="0.5" r="0.5">
+              <stop offset="0" stop-color="#e2d6c2"/><stop offset="0.7" stop-color="#d6c7ad"/><stop offset="1" stop-color="#a9947a"/>
+            </radialGradient>
+            <radialGradient id="crema" cx="0.42" cy="0.4" r="0.62">
+              <stop offset="0" stop-color="#d9a36a"/><stop offset="0.45" stop-color="#b97a42"/><stop offset="0.85" stop-color="#8a5229"/><stop offset="1" stop-color="#5e3418"/>
+            </radialGradient>
+            <filter id="sh" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="14"/></filter>
+            <clipPath id="cupclip"><circle cx="300" cy="300" r="132"/></clipPath>
+          </defs>
+          <ellipse cx="312" cy="322" rx="262" ry="258" fill="#3d2c1c" opacity="0.16" filter="url(#sh)"/>
+          <circle cx="300" cy="300" r="262" fill="url(#sau)"/>
+          <circle cx="300" cy="300" r="196" fill="none" stroke="#dfd3bf" stroke-width="2"/>
+          <path d="M452 270 C 530 262, 534 338, 452 330" fill="none" stroke="#e9e0d0" stroke-width="30" stroke-linecap="round"/>
+          <path d="M452 270 C 530 262, 534 338, 452 330" fill="none" stroke="#cdbd9f" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+          <circle cx="306" cy="308" r="160" fill="#3d2c1c" opacity="0.18" filter="url(#sh)"/>
+          <circle cx="300" cy="300" r="158" fill="url(#rim)"/>
+          <circle cx="300" cy="300" r="136" fill="url(#well)"/>
+          <g clip-path="url(#cupclip)">
+            <g class="pour__fill" data-fill>
+              <circle cx="300" cy="300" r="136" fill="url(#crema)"/>
+              <g class="pour__stripes" fill="none" stroke-linecap="round">
+                <path d="M210 250 A 110 110 0 0 1 330 196" stroke="#e8bd88" stroke-width="7" opacity="0.4"/>
+                <path d="M392 262 A 100 100 0 0 1 352 384" stroke="#6e3d1d" stroke-width="9" opacity="0.32"/>
+                <path d="M252 396 A 104 104 0 0 1 200 300" stroke="#e8bd88" stroke-width="5" opacity="0.35"/>
+                <path d="M262 236 A 74 74 0 0 1 366 286" stroke="#6e3d1d" stroke-width="6" opacity="0.3"/>
+                <path d="M336 356 A 62 62 0 0 1 244 330" stroke="#f1cf9f" stroke-width="4" opacity="0.4"/>
+                <path d="M280 268 A 34 34 0 0 1 328 298" stroke="#e8bd88" stroke-width="4" opacity="0.45"/>
+              </g>
+            </g>
+          </g>
+          <circle class="pour__stream" data-stream cx="300" cy="300" r="7" fill="#3a2010"/>
+          <ellipse cx="248" cy="196" rx="54" ry="16" transform="rotate(-32 248 196)" fill="#fff" opacity="0.4"/>
+        </svg>
+        <figcaption class="pour__read" id="pour-read">
+          <span class="pour__num"><span data-secs>00.0</span> s</span>
+          <span class="pour__num"><span data-grams>0.0</span> g</span>
+          <span class="pour__note" data-pour-note>Pulling a shot, in real time.</span>
+          <button class="pour__again" type="button" data-again hidden>Pull another</button>
+        </figcaption>
+      </figure>
+
+      <h1 class="hero__title" id="hero-title">Yang Diao</h1>
+      <p class="hero__line">One coffee, made one way, at a counter in Talat Noi.</p>
+      <p class="hero__status" data-status>Tuesday to Sunday, 07:30 to 17:00.</p>
+    </section>
+
+    <section class="split" id="bean" aria-labelledby="bean-title">
+      <p class="index" data-line><span>01 · The bean</span></p><!-- taste-skill-ignore: section index kept from the client's chosen reference -->
+      <div class="split__grid">
+        <div class="split__text" data-reveal>
+          <h2 id="bean-title">One hillside. Every cup.</h2>
+          <p>Every cup here comes from one slope in Doi Pangkhon, Chiang Rai, 1,400 metres up. The cherries are picked ripe in January, washed, and fermented for thirty-six hours before they dry on raised beds.</p>
+          <p>We roast once a week, on Tuesday morning, and rest the beans for nine days before they reach the grinder. Nothing else goes in the hopper. There is no house blend, because there is no house.</p>
+          <p class="caption">Doi Pangkhon, Chiang Rai · Washed · Picked in January</p>
+        </div>
+        <figure class="split__pic" data-reveal>
+          <img src="assets/img/hill.jpg" width="1200" height="1500" loading="lazy" alt="Drawing of terraced coffee rows on misty green hills, with a branch of red and amber coffee cherries in front.">
+        </figure>
+      </div>
+    </section>
+
+    <section class="split split--flip" aria-labelledby="cup-title">
+      <div class="split__grid">
+        <figure class="split__pic" data-reveal>
+          <img src="assets/img/cup.jpg" width="1200" height="1500" loading="lazy" alt="Drawing of a small stoneware espresso cup on a saucer, glazed ivory with a raw clay foot, steam rising.">
+        </figure>
+        <div class="split__text" data-reveal>
+          <h2 id="cup-title">Two sips, and you know the whole cup.</h2>
+          <p>The first sip is brown sugar and tamarind. The second, once it cools a little, is black tea. That is the coffee. We have spent two years making sure nothing else gets in its way.</p>
+          <p>It comes in a 150 ml stoneware cup thrown in Lampang, with milk if you ask for it. There is no large. There is no oat. There is one table, and it seats eight.</p>
+          <p class="caption">Lampang stoneware · 150 ml · Milk on request</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="recipe" id="recipe" aria-labelledby="recipe-title">
+      <p class="index" data-line><span>02 · The recipe</span></p>
+      <h2 class="sr-only" id="recipe-title">The recipe</h2>
+      <div class="recipe__cols">
+        <dl class="spec" data-rows>
+          <div><dt>Origin</dt><dd>Doi Pangkhon, Chiang Rai</dd></div>
+          <div><dt>Altitude</dt><dd>1,400 metres</dd></div>
+          <div><dt>Variety</dt><dd>Typica and Catimor</dd></div>
+          <div><dt>Process</dt><dd>Washed, 36-hour ferment</dd></div>
+          <div><dt>Roast</dt><dd>Medium, rested nine days</dd></div>
+          <div><dt>Grinder</dt><dd>Flat burr, set each morning</dd></div>
+        </dl>
+        <dl class="spec" data-rows>
+          <div><dt>Dose</dt><dd>18.0 grams in</dd></div>
+          <div><dt>Yield</dt><dd>36 grams out</dd></div>
+          <div><dt>Time</dt><dd>27 to 29 seconds</dd></div>
+          <div><dt>Water</dt><dd>93 °C, filtered on site</dd></div>
+          <div><dt>Milk</dt><dd>Fresh, from Muak Lek, 60 °C</dd></div>
+          <div><dt>Price</dt><dd>120 baht, with or without</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="detail" aria-labelledby="detail-title">
+      <p class="index" data-line><span>03 · In detail</span></p>
+      <h2 class="sr-only" id="detail-title">In detail</h2>
+      <div class="detail__row">
+        <figure class="tile" data-reveal>
+          <img src="assets/img/detail-beans.jpg" width="1000" height="1250" loading="lazy" alt="Drawing of medium-roast coffee beans scattered on a dark surface.">
+          <figcaption>Rested nine days</figcaption>
+        </figure>
+        <figure class="tile" data-reveal>
+          <img src="assets/img/detail-crema.jpg" width="1000" height="1250" loading="lazy" alt="Drawing of espresso crema seen up close, amber with darker tiger stripes and fine bubbles.">
+          <figcaption>Crema at 28 seconds</figcaption>
+        </figure>
+        <figure class="tile" data-reveal>
+          <img src="assets/img/detail-stoneware.jpg" width="1000" height="1250" loading="lazy" alt="Drawing of ivory glaze with throwing rings, running in rounded drips over a raw brown clay foot.">
+          <figcaption>Glaze over raw clay</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="counter" id="counter" aria-labelledby="counter-title">
+      <p class="index" data-line><span>04 · The counter</span></p>
+      <h2 class="sr-only" id="counter-title">Notes from the counter</h2>
+      <div class="notes">
+        <blockquote class="note" data-reveal>
+          <p>We make one coffee. You may have it with milk.</p>
+          <footer>Chalked by the door</footer>
+        </blockquote>
+        <blockquote class="note" data-reveal>
+          <p>The grinder stops at half past four. After that the beans have had their day.</p>
+          <footer>Pinned above the grinder</footer>
+        </blockquote>
+        <blockquote class="note" data-reveal>
+          <p>One table, eight seats. If someone is alone at it, sit down and say hello.</p>
+          <footer>Painted on the table</footer>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="bag" id="bag" aria-labelledby="bag-title">
+      <p class="index" data-line><span>05 · Take it home</span></p>
+      <div class="bag__grid">
+        <div class="bag__intro" id="visit">
+          <h2 id="bag-title">Hold a bag for the weekend.</h2>
+          <p class="bag__price">480 baht <span>250 grams, roasted this Tuesday</span></p>
+          <p>Tell us how you brew and we will grind it for that, or keep it whole. Collect it at the counter and pay there.</p>
+          <dl class="visit">
+            <div><dt>Where</dt><dd>A shophouse counter in Talat Noi, Bangkok</dd></div>
+            <div><dt>When</dt><dd>Tuesday to Sunday, 07:30 to 17:00</dd></div>
+            <div><dt>Write</dt><dd><a href="mailto:hello@yangdiao.example">hello@yangdiao.example</a></dd></div>
+          </dl>
+        </div>
+
+        <form class="order" id="order" novalidate>
+          <fieldset class="grind">
+            <legend>Grind it for</legend>
+            <div class="grind__opts">
+              <label><input type="radio" name="grind" value="whole bean" checked><span>Whole bean</span></label>
+              <label><input type="radio" name="grind" value="espresso"><span>Espresso</span></label>
+              <label><input type="radio" name="grind" value="moka pot"><span>Moka pot</span></label>
+              <label><input type="radio" name="grind" value="pour-over"><span>Pour-over</span></label>
+            </div>
+          </fieldset>
+          <div class="order__row">
+            <label class="field">
+              <span>Bags</span>
+              <select name="bags">
+                <option value="1">1 bag</option>
+                <option value="2">2 bags</option>
+                <option value="3">3 bags</option>
+                <option value="4">4 bags</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Collect on</span>
+              <select name="day">
+                <option>Wednesday</option>
+                <option>Thursday</option>
+                <option>Friday</option>
+                <option selected>Saturday</option>
+                <option>Sunday</option>
+              </select>
+            </label>
+          </div>
+          <label class="field">
+            <span>Your name</span>
+            <input name="name" type="text" autocomplete="name" required>
+          </label>
+          <label class="field">
+            <span>Phone or LINE</span>
+            <input name="contact" type="text" autocomplete="tel" required>
+          </label>
+          <p class="order__error" data-error role="alert" hidden>Add your name and a phone number or LINE so we can tell you it is ready.</p>
+          <button class="btn btn--big" type="submit" data-submit>Hold 1 bag, whole bean · 480 baht</button>
+          <p class="fine">This opens your email with the order written out. We hold bags until 17:00 on the day you pick. Cash or PromptPay at the counter.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot__in">
+      <a class="mark" href="#top">Yang Diao</a>
+      <p>Grown in Doi Pangkhon · Roasted in Talat Noi</p>
+      <a class="foot__top" href="#top">Back to the top</a>
+    </div>
+    <p class="foot__imprint">A concept website by DmG Studio. Yang Diao is a fictional café; every picture here was drawn for this site.</p>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
