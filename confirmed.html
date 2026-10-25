@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calorise Email Confirmed</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #000000; --surface: #16181B; --text: #F5F5F3; --muted: #9A9FA6;
+    --ember: #FF7A1A; --danger: #FF5A5A;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--text); }
+  body { font: 17px/1.55 Barlow, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; min-height: 100vh; display: flex; }
+  main { width: 100%; max-width: 480px; margin: 0 auto; padding: 56px 20px 40px; display: flex; flex-direction: column; }
+  .mark { width: 64px; height: 64px; }
+  h1 { font-family: "Barlow Condensed", Barlow, sans-serif; font-weight: 700; font-size: 64px; line-height: 0.98; letter-spacing: -1px; margin: 28px 0 16px; }
+  h1 span { color: var(--ember); display: block; }
+  p { color: var(--muted); margin: 0 0 12px; max-width: 34em; }
+  ol { color: var(--text); padding-left: 22px; margin: 8px 0 28px; }
+  li { margin: 6px 0; }
+  .btn { display: block; text-align: center; background: var(--ember); color: #000; text-decoration: none;
+         font-weight: 600; font-size: 17px; padding: 17px 24px; border-radius: 999px; margin-top: auto; }
+  .btn:focus-visible { outline: 3px solid var(--text); outline-offset: 3px; }
+  .note { font-size: 13px; color: var(--muted); text-align: center; margin-top: 14px; }
+  .error h1 span { color: var(--danger); }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+  <svg class="mark" viewBox="0 0 512 512" aria-label="Calorise" role="img">
+    <circle cx="256" cy="256" r="130" fill="none" stroke="#202327" stroke-width="38"/>
+    <circle cx="256" cy="256" r="130" fill="none" stroke="#F5F5F3" stroke-width="38" stroke-linecap="round"
+            stroke-dasharray="612.6 816.8" transform="rotate(-90 256 256)"/>
+    <path d="M256 312 V208 M214 248 L256 206 L298 248" fill="none" stroke="#F5F5F3" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="126" cy="256" r="23" fill="#FF7A1A"/>
+  </svg>
+
+  <section id="ok">
+    <h1>Email confirmed.<span>You're in.</span></h1>
+    <p>Your Calorise account is ready. Go back to the app to sign in.</p>
+    <ol>
+      <li>Open Calorise on your phone.</li>
+      <li>Tap <strong>Have an account? Sign in</strong>.</li>
+      <li>Sign in with the email and password you just created.</li>
+    </ol>
+  </section>
+
+  <section id="expired" class="error" hidden>
+    <h1>This link<span>has expired.</span></h1>
+    <p id="expired-reason">Confirmation links only work once and for a limited time.</p>
+    <ol>
+      <li>Open Calorise and try signing in with your email and password.</li>
+      <li>If that doesn't work, create your account again to get a new email.</li>
+    </ol>
+  </section>
+
+  <a class="btn" href="calorise://">Open Calorise</a>
+  <p class="note">Opening from a computer? Switch to your phone and open the app there.</p>
+</main>
+<script>
+  // Supabase adds error details to the URL when a link is expired or already used.
+  (function () {
+    try {
+      var params = new URLSearchParams(location.hash.replace(/^#/, '') || location.search.replace(/^\?/, ''));
+      if (params.get('error') || params.get('error_code')) {
+        document.getElementById('ok').hidden = true;
+        document.getElementById('expired').hidden = false;
+        document.title = 'Calorise Link Expired';
+      }
+    } catch (e) { /* show the default confirmed message */ }
+  })();
+</script>
+</body>
+</html>
